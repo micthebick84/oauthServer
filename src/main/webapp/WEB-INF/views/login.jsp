@@ -68,8 +68,32 @@
             border: 1px solid #f5c6cb;
         }
 
-        .login-form {
-            /* 로그인 폼 스타일링 추가 */
+        .login-form .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+            font-size: 14px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .login-form input[type="text"]:focus,
+        .login-form input[type="password"]:focus {
+            border-color: #4CAF50;
+            outline: none;
         }
 
         .submit-btn {
@@ -128,7 +152,7 @@
     <!-- 로그인 폼 -->
     <form action="/login" method="post" class="login-form">
         <!-- CSRF 토큰 추가 (Spring Security 사용 시 필요) -->
-<%--        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+        <%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
         <div class="form-group">
             <label for="username">ID</label>
             <input type="text" id="username" name="username" placeholder="ID" required/>
