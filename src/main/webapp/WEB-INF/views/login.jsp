@@ -145,8 +145,8 @@
     </c:if>
 
     <!-- 오류 메시지 표시 (로그인 시 에러가 있을 경우) -->
-    <c:if test="${not empty errorMessage}">
-        <div class="message error">${errorMessage}</div>
+    <c:if test="${param.error == 'true'}">
+        <div class="message error">로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.</div>
     </c:if>
 
     <!-- 로그인 폼 -->
