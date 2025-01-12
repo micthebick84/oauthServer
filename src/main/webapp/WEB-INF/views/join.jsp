@@ -146,7 +146,6 @@
 <div class="container">
     <h1>Join</h1>
     <hr>
-
     <!-- 성공 메시지 표시 -->
     <c:if test="${not empty successMessage}">
         <div class="message success">${successMessage}</div>
@@ -156,10 +155,7 @@
     <c:if test="${not empty errorMessage}">
         <div class="message error">${errorMessage}</div>
     </c:if>
-
     <form action="/join" method="post" name="joinForm">
-<%--        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-
         <div class="form-group">
             <label for="username">Id</label>
             <i class="fas fa-user"></i>
@@ -176,11 +172,19 @@
             <input type="text" id="nickname" name="nickname" placeholder="Nick Name" required/>
         </div>
         <div class="form-group">
-            <label for="phone">Phone</label>
-            <i class="fas fa-phone"></i>
-            <input type="tel" id="phone" name="phone" placeholder="Phone (ex: 010-1234-5678)"
-                   pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" required/>
+            <label for="email">Email</label>
+            <i class="fas fa-user-tag"></i>
+            <input type="text" id="email" name="email" placeholder="Email"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                   title="Enter a valid email address (e.g., user@example.com)"
+                   required/>
         </div>
+<%--        <div class="form-group">--%>
+<%--            <label for="phone">Phone</label>--%>
+<%--            <i class="fas fa-phone"></i>--%>
+<%--            <input type="tel" id="phone" name="phone" placeholder="Phone (ex: 010-1234-5678)"--%>
+<%--                   pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" required/>--%>
+<%--        </div>--%>
         <input type="submit" value="Join" class="submit-btn"/>
     </form>
 </div>

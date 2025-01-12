@@ -29,7 +29,8 @@ public class UserService {
             entity.setUsername(dto.getUsername());
             entity.setPassword(bCryptPasswordEncoder.encode(dto.getPassword()));
             entity.setName(dto.getUsername());
-            entity.setPhone(dto.getPhone());
+//            entity.setPhone(dto.getPhone());
+            entity.setEmail(dto.getEmail());
             entity.setRole("ADMIN");
 
             userRepository.save(entity);
